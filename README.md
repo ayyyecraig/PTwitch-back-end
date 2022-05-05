@@ -36,3 +36,20 @@ In hopes of meeting MVP as quickly as possible I will be hoping to spend the res
  ***
  * [Trello](https://trello.com/b/pt5c9NHi/ptwitch)
  <img src="https://i.imgur.com/Yl7bKSb.png" width=30% > <img src="https://i.imgur.com/GMdOj4r.png" width=30%>
+
+
+*** Dependecies/ commands
+* npm init -y
+* npm install sequelize pg
+* git init
+* touch .gitignore
+* echo $'node_modules\n.DS_Store\npackage-lock.json' >> .gitignore
+* sequelize init
+* sequelize db:create
+* sequelize model:generate --name <ModelName> --attributes <someKey>:<datatype>,<anotherKey>:<anotherDatatype>
+* sequelize db:migrate
+* sequelize seed:generate --name <model_name>
+* sequelize-cli db:seed:all**
+* npm i express morgan body-parser cors
+* npm i nodemon --save-dev
+* touch server.js
