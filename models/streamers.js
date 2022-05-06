@@ -3,24 +3,26 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Comment extends Model {
+  class Streamer extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Comment.belongsTo( models.User, { foreignKey:'userId'})
+     Streamer.belongsTo(models.Playlist, {foreignKey:'playlistId'})
     }
   }
-  Comment.init({
-    userId: DataTypes.INTEGER,
-    playlistId: DataTypes.INTEGER,
-    content: DataTypes.STRING
+  streamers.init({
+    name: DataTypes.STRING,
+    contentType: DataTypes.STRING,
+    schedule: DataTypes.STRING,
+    img: DataTypes.STRING,
+    playlistId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Comment',
-    tableName: 'comments'
+    modelName: 'Streamer',
+    tableName:'streamers'
   });
-  return Comment;
+  return Streamer;
 };

@@ -3,31 +3,22 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Users extends Model {
-
+  class User extends Model {
+   
     static associate(models) {
-      // define association here
-      Users.hasOne(models.streamerList, {foreignKey: 'streamerListId'})
-      Users.hasMany(models.comments, {foreignKey:'userId'})
-     
+      User.hasMany(models.Comment, {foreignKey: 'userId'})
+      User.hasOne(models.Playlist, {foreignKey: 'userId'})
     }
   }
-  Users.init({
+  user.init({
+    name: DataTypes.STRING,
     username: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    streamerList: { 
-      type:DataTypes.INTEGER,
-      onDelete: 'CASCADE',
-      references:{
-        model: 'streamerList',
-        key: 'id'
-      }
-    },
+    passwordDigest: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',
     tableName: 'users'
   });
-  return Users;
+  return User;
 };
