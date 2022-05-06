@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Comment.init({
-    id: DataTypes.INTEGER,
+ 
     userId:{ 
       type:DataTypes.INTEGER,
       onDelete: 'CASCADE',
@@ -37,5 +37,5 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Comment',
     tableName: 'comments'
   });
-  return comments;
+  return Comment;
 };

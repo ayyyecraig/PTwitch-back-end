@@ -1,10 +1,12 @@
 {
   "development": {
-    "database": "ptwitch_database_development",
+    "database": "ptwitch_database",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "database": "ptwitch_database_test",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
@@ -13,3 +15,6 @@
     "dialect": "postgres"
   }
 }
+
+
+

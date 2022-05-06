@@ -53,3 +53,4 @@ In hopes of meeting MVP as quickly as possible I will be hoping to spend the res
 * npm i express morgan body-parser cors
 * npm i nodemon --save-dev
 * touch server.js
+* npm install bcrypt jsonwebtoken dotenv
